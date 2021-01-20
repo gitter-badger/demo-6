@@ -1,0 +1,454 @@
+// 區塊風格屬性
+@mixin div-style($back: #f0ece6) {
+  margin: auto;
+  margin-top: 10px;
+  background-color: $back;
+  border-radius: 34px;
+  box-shadow: 0px 2px 10px #888888a2;
+  padding-bottom: 1em;
+  // margin: 0.1em 0.1em 0.1em 0.1em;
+  h1 {
+    background-color: blanchedalmond;
+    color: brown;
+    border-radius: 20px;
+    // width: auto;
+  }
+  th {
+    color: brown;
+  }
+  td {
+    color: #4a593d;
+  }
+}
+
+// 按鈕物件風格屬性
+@mixin button-style(
+  $color: white,
+  $h: 8px,
+  $w: 20px,
+  $font: 28px,
+  $back: white
+) {
+  input[type="button"] {
+    border: none;
+    outline: none;
+    padding: $h $w;
+    font-size: $font;
+    color: $color;
+    border-radius: 34px;
+    box-shadow: 0 0 4px #999;
+    background-color: $back;
+  }
+
+  input[type="button"]:active {
+    box-shadow: 0 0 10px #999;
+    transform: scale(0.8);
+  }
+
+  input[type="button"]:hover {
+    background-color: #fdf8a9;
+  }
+}
+
+body,
+html {
+  height: 100%;
+  max-height: 100%;
+}
+
+// 主要背景風格
+.container {
+  width: 100%;
+  height: max-content;
+  box-shadow: 0px 0px 12px #888888a2 !important;
+  text-align: center;
+  padding-top: 5px;
+  @include div-style();
+}
+
+// 裝置標題
+.header {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  h1 {
+    color: #323232;
+    background-color: white !important;
+    text-shadow: 0.04em 0.04em 0.1em#ffffff !important;
+  }
+}
+
+// 聯網狀態列
+.status {
+  // display: none;
+  @include div-style(white);
+  @include button-style(#064b50, 3px, 10px, 20px, #eaff9d);
+  width: 95%;
+  table {
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    letter-spacing: 3px;
+    font-size: 20px;
+
+    th {
+      width: 30%;
+      font-size: 36px;
+    }
+    td {
+      width: 200px;
+    }
+  }
+}
+
+.m-State {
+  @include div-style(white);
+  @include button-style(#070707, 5px, 10px, 20px, #ffffff);
+  width: 95%;
+  h2 {
+    background-color: blanchedalmond;
+    border-radius: 34px 34px 0px 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 40px;
+  }
+  table {
+    margin: auto;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    width: 90%;
+    border-spacing: 5px 5px;
+    th {
+      width: 20%;
+      font-size: 36px;
+    }
+    td {
+      width: 20%;
+      height: 50px;
+      font-size: 36px;
+      background-color: #fff8b6;
+      border-radius: 15px;
+    }
+  }
+}
+
+.m-main {
+  display: flex;
+}
+
+.m-Chart {
+  @include div-style(white);
+  width: 45%;
+  h2 {
+    background-color: blanchedalmond;
+    border-radius: 34px 34px 0px 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 40px;
+  }
+}
+
+.chart-a {
+  margin-top: 5vw;
+}
+.chart-b {
+  position: relative;
+  top: -180px;
+  left: 20px;
+}
+
+.m-Ctrl {
+  @include div-style(white);
+  @include button-style(#06500a, 50px, 10px, 20px, #ffffff);
+  width: 45%;
+  h2 {
+    background-color: blanchedalmond;
+    border-radius: 34px 34px 0px 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 40px;
+  }
+  table {
+    margin: auto;
+
+    td {
+      input {
+        margin-top: 0.88em;
+      }
+    }
+  }
+}
+
+#Up {
+  background-image: url("./up.svg");
+  background-size: cover;
+  height: 0;
+}
+
+#Down {
+  background-image: url("./up.svg");
+  transform: rotate(180deg);
+  background-size: cover;
+  height: 0;
+}
+
+#Down:active {
+  box-shadow: 0 0 10px #999;
+  transform: scale(0.8) rotate(180deg) !important;
+}
+
+#Stop {
+  background-image: url("./stop.svg");
+  background-size: cover;
+  height: 0;
+}
+
+#SpdUp {
+  background-image: url("./spdUp.svg");
+  background-size: cover;
+  height: 0;
+}
+
+#SpdDown {
+  background-image: url("./spdUp.svg");
+  transform: rotate(180deg);
+  background-size: cover;
+  height: 0;
+}
+
+#SpdDown:active {
+  box-shadow: 0 0 10px #999;
+  transform: scale(0.8) rotate(180deg) !important;
+}
+
+.m-Loop {
+  @include div-style(white);
+  width: 95%;
+  height: 200px;
+  h2 {
+    background-color: blanchedalmond;
+    border-radius: 34px 34px 0px 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 2560px) {
+  .m-Chart {
+    height: 850px;
+  }
+  .m-Ctrl {
+    height: 850px;
+  }
+  #Up {
+    padding: 4em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Down {
+    padding: 4em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Stop {
+    padding: 4em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdUp {
+    padding: 4em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdDown {
+    padding: 4em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+}
+@media screen and (max-width: 1920px) {
+  .m-Chart {
+    height: 675px;
+  }
+  .m-Ctrl {
+    height: 675px;
+  }
+  #Up {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Down {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+  #Stop {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdUp {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdDown {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+}
+@media screen and (max-width: 1300px) {
+  #Up {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Down {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Stop {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdUp {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdDown {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+}
+
+@media screen and (max-width: 1096px) {
+  .m-Chart {
+    height: 715px;
+  }
+  .m-Ctrl {
+    height: 715px;
+  }
+  .status {
+    table {
+      th {
+        font-size: 5vw;
+      }
+      td {
+        font-size: 5vw;
+      }
+    }
+  }
+  .m-State {
+    h2 {
+      font-size: 7vw;
+    }
+    table {
+      th {
+        font-size: 5vw;
+      }
+      td {
+        font-size: 5vw;
+      }
+    }
+  }
+  .m-Chart {
+    h2 {
+      font-size: 7vw;
+    }
+  }
+  .m-Ctrl {
+    h2 {
+      font-size: 7vw;
+    }
+  }
+  .m-Loop {
+    h2 {
+      font-size: 7vw;
+    }
+  }
+  #Up {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Down {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Stop {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdUp {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdDown {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+}
+@media screen and (max-width: 764px) {
+  #Up {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Down {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #Stop {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdUp {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+
+  #SpdDown {
+    padding: 3em;
+    padding-bottom: calc(100% * 1 / 3);
+  }
+}
+@media screen and (max-width: 600px) {
+  .m-Chart {
+    height: 575px;
+  }
+  .m-Ctrl {
+    height: 575px;
+  }
+  #Up {
+    padding: 2.5em;
+    padding-bottom: calc(30% * 1 / 1);
+  }
+
+  #Down {
+    padding: 2.5em;
+    padding-bottom: calc(30% * 1 / 1);
+  }
+
+  #Stop {
+    padding: 2.5em;
+    padding-bottom: calc(30% * 1 / 1);
+  }
+
+  #SpdUp {
+    padding: 2.5em;
+    padding-bottom: calc(30% * 1 / 1);
+  }
+
+  #SpdDown {
+    padding: 2.5em;
+    padding-bottom: calc(30% * 1 / 1);
+  }
+}

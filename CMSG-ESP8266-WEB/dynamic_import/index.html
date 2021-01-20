@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="log">func1</button>
+    <button id="warn">func2</button>
+    <button id="add">func3</button>
+    <button id="remove">func4</button>
+    <button id="style">func5</button>
+</body>
+
+<!-- <script src="func1.js"></script>
+<script src="func2.js"></script>
+<script src="func3.js"></script>
+<script src="func4.js"></script>
+<script src="func5.js"></script> -->
+<!-- <script type="module">
+    (async()=>{
+        setTimeout(async() => {
+            const moduleSpecifier = './func1.js';
+            const module = await import(moduleSpecifier)
+            document.getElementById("func1").addEventListener("click",()=>module.a());
+            
+        }, 3000);
+    })();
+</script> -->
+<script type="module" src="./module.js"></script>
+</html>

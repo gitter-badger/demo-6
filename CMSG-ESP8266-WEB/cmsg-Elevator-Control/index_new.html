@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="webstyle_new.css">
+    <title>輔助肢體抬升機</title>
+    <style type="text/css">
+        * {
+            font-weight: 700 !important;
+            text-shadow: 0.04em 0.04em 0.05em#cde086 !important;
+            color: brown;
+            font-family: "Microsoft JhengHei";
+            transition: 0.2s;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <header>
+            <div class="header">
+                <h1>輔助升降器</h1>
+            </div>
+        </header>
+        <div class="status">
+            <table>
+                <thead>
+                    <th>網路</th>
+                    <th>訊號</th>
+                    <th>命令</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="wifi">--</td>
+                        <td id="RSSI" style="height: 55px;">--</td>
+                        <td><input type="button" value="CMD" onclick="inputCmd()"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="m-State">
+            <h2>裝置狀態</h2>
+            <table>
+                <thead>
+                    <th>起點</th>
+                    <th>終點</th>
+                    <th>循環</th>
+                    <th>模式</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="PosS">-</td>
+                        <td id="PosE">-</td>
+                        <td id="cycle">-</td>
+                        <td><input class="btn-mode" id="MD" type="button" value="觀察" onclick="SendBt('MODE')"></td>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <th>位置</th>
+                    <th>速度</th>
+                    <th>上限</th>
+                    <th>下限</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="POS" style="color: coral;">-</td>
+                        <td id="SPD" style="color: blue;">-</td>
+                        <td id="LTUp" style="color: green;">OFF</td>
+                        <td id="LTDn" style="color: red;">OFF</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="m-main">
+            <div class="m-Chart">
+                <h2>裝置圖示</h2>
+                <div class="chart-a">
+                    <svg width="100" height="500" class="svg-inline--fa fa-caret-square-up fa-w-14"
+                        data-icon="caret-square-up" data-prefix="far">
+                        <g class="layer">
+                            <title>Layer 1</title>
+                            <rect fill="#e0d9d9" height="497" id="svg_5" stroke="#776e6e" stroke-width="3"
+                                transform="matrix(1 0 0 1 0 0)" width="26" x="1.55625" y="1.5" />
+                            <path d="m40.6215,58.57203l0,-70.00001l44.042,70.00001l-44.042,0z" fill="#e0d9d9" id="svg_6"
+                                stroke="#776e6e" stroke-width="3" transform="rotate(90 62.642 23.572)" />
+                            <rect fill="#e0d9d9" height="62" id="svg_8" stroke="#776e6e" stroke-width="3" width="71"
+                                x="27.55" y="436.5" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="chart-b" id="m-pos">
+                    <svg width="90" height="100" class="svg-inline--fa fa-caret-square-up fa-w-14"
+                        data-icon="caret-square-up" data-prefix="far">
+                        <g class="layer">
+                            <title>Layer 1</title>
+                            <rect fill="#0019ff" height="28" id="svg_3" stroke="#a0a0a0" width="79.7" x="9.7"
+                                y="36.671875" />
+                            <rect fill="#d3d3d3" height="69" id="svg_4" stroke="#a0a0a0" stroke-width="2" width="7.5"
+                                x="1.1" y="16" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="m-Ctrl">
+                <h2>裝置控制</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="speedup"><input type="button" id="SpdUp" onclick="SendBt('SPDUp')"></div>
+                            <div class="up"><input type="button" id="Up" onclick="SendBt('BTUp')"></div>
+                            <div class="stop"><input type="button" id="Stop" onclick="SendBt('BTStp')"></div>
+                            <div class="down"><input type="button" id="Down" onclick="SendBt('BTDn')"></div>
+                            <div class="speeddown"><input type="button" id="SpdDown" onclick="SendBt('SPDDn')"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="m-Loop">
+            <h2>循環設定</h2>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script>
+    setTimeout('connect()', 3000);
+</script>
+
+</html>

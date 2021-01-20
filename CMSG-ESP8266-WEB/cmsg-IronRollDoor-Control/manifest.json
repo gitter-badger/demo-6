@@ -1,0 +1,8 @@
+{
+  "short_name": "順裕鐵材",
+  "name": "順裕鐵材通風捲門控制",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "theme_color": "#000000",
+  "background_color": "#505050"
+}
